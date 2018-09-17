@@ -1,1 +1,1 @@
-# DNA haplotype clustering algorithm with infinite Dirichlet process mixture model
+# DNA haplotype clustering with infinite Dirichlet process mixture model
