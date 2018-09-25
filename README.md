@@ -46,3 +46,18 @@ The likelihood of γ and θ given the reads, assignment and haplotypes is also c
 the likelihood for θ:
 
 ![eq4](img/eq4.jpg?raw=true )
+
+# Gibbs sampler
+According to the prior and likelihood, we can derive the conditional posterior distribution for each parameter.
+
+For cluster assignment:
+
+![eq5](img/eq5.jpg?raw=true )
+
+For haplotypes:
+
+![eq6](img/eq6.jpg?raw=true )
+
+For γ and θ:
+
+![eq7](img/eq7.jpg?raw=true )
