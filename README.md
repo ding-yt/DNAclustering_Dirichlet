@@ -14,6 +14,28 @@ In this model, I simplified the likelihood calculation for haplotypes by using b
 ## Prior for cluster assignment
 The Dirichlet process mixture (DPM) allows uncertainty in the number of clusters, which is ideal for our problem. The DPM introduce a prior on mixing proportions that leads to a few domination class and is controlled by hyper parameter α. The probability that read i is assigned to class k is :
 
-![Alt text](img/eq1.jpg?raw=true )
+![Alt text](https://github.com/ding-yt/DNAclustering_Dirichlet/img/eq1.png?raw=true )
 
  where 𝑛<sub>\i,k</sub>represents the number of reads in class k except read i. In other words, the probability of assigning read i to class k is proportional to the number of reads already in class k, or with probability proportional to α, assign read i to a new class.
+ 
+# Prior for γ and θ
+Beta distribution was chosen as conjugate prior for both γ and θ.
+
+γ ~ Beta(1,1)
+
+θ ~ Beta(4,1)
+
+a, b for Beta distribution of γ is set to 1, 1 as a non-informative prior since we do not have prior knowledge for γ. a, b for Beta distribution of θ is set to 4, 1 to represent our prior knowledge that the error in sequencing process is around 80%.
+
+# Likelihood for cluster assignment
+The likelihood of read i is assigned to haplotype k is considered as binomial. For a pair of read and haplotype, we count the number of match and mismatch between them. And the likelihood is :
+
+θ<sup>^match</sup>(1-θ)<sup>mismatch</sup>
+
+So for a set of reads r=(r_1,r_2,…,r_n )  , given assignment c=(c_1,c_2,…,c_k ), where clusters has haplotypes h=(h_1,h_2,…,h_k ), the likelihood is:
+
+![Alt text](img/eq2.jpg?raw=true )
+
+where n is the total number of reads, L is the length of reads, I is the indicator function.
+
+
