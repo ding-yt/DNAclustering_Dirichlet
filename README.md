@@ -14,7 +14,7 @@ In this model, I simplified the likelihood calculation for haplotypes by using b
 ## Prior for cluster assignment
 The Dirichlet process mixture (DPM) allows uncertainty in the number of clusters, which is ideal for our problem. The DPM introduce a prior on mixing proportions that leads to a few domination class and is controlled by hyper parameter α. The probability that read i is assigned to class k is :
 
-![eq1](img/eq1.png | width=100)
+<img src="img/eq1.png" width="300" >
 
  where 𝑛<sub>\i,k</sub>represents the number of reads in class k except read i. In other words, the probability of assigning read i to class k is proportional to the number of reads already in class k, or with probability proportional to α, assign read i to a new class.
  
@@ -34,30 +34,30 @@ The likelihood of read i is assigned to haplotype k is considered as binomial. F
 
 So for a set of reads r=(r_1,r_2,…,r_n )  , given assignment c=(c_1,c_2,…,c_k ), where clusters has haplotypes h=(h_1,h_2,…,h_k ), the likelihood is:
 
-![eq2](img/eq2.jpg )
+<img src="img/eq2.png" width="300" >
 
 where n is the total number of reads, L is the length of reads, I is the indicator function.
 
 # Likelihood for γ and θ
 The likelihood of γ and θ given the reads, assignment and haplotypes is also considered as binomial. The likelihood for γ:
 
-![eq3](img/eq3.jpg )
+<img src="img/eq3.png" width="300" >
 
 the likelihood for θ:
 
-![eq4](img/eq4.jpg )
+<img src="img/eq4.png" width="300" >
 
 # Gibbs sampler
 According to the prior and likelihood, we can derive the conditional posterior distribution for each parameter.
 
 For cluster assignment:
 
-![eq5](img/eq5.jpg )
+<img src="img/eq5.png" width="600" >
 
 For haplotypes:
 
-![eq6](img/eq6.jpg )
+<img src="img/eq6.png" width="300" >
 
 For γ and θ:
 
-![eq7](img/eq7.jpg )
+<img src="img/eq7.png" width="400" >
