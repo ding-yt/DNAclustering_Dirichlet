@@ -8,7 +8,7 @@ When using NGS to sequence a mixed DNA sample, the data generated are amplified 
 </p>
 In this model, I simplified the likelihood calculation for haplotypes by using binomial distribution instead of multinomial distribution, and relaxed the error rate by adding a Beta prior. 
 
-## data simulation
+## Data simulation
 - First, a master sequence was generated with the probability of 4 bases (A, T, C, G) at each position (0.25, 0.25, 0.25, 0.25). 
 - Secondly, true haplotypes were generated according to the master sequence with similarity γ. This means for each position of a haplotype, it will have the same base as the master sequence with probability γ and have one of the other bases with probability (1- γ)/3 each. 
 - Thirdly, a fixed number of reads were generated for each true haplotypes with similarity θ.
